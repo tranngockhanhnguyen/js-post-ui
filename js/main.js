@@ -1,7 +1,7 @@
 console.log('Hello')
 
 import axiosClient from './api/axiosClient'
-import postApi from './api/postAPI'
+import postApi from './api/postApi'
 
 console.log('Hello')
 
