@@ -17,9 +17,5 @@ export function setThumbnail(parentElement, selector, url) {
   const element = parentElement.querySelector(selector)
   if (element) {
     element.src = url
-
-    element.addEventListener('error', () => {
-      element.src = '/images/thumbnail.jpg'
-    })
   }
 }
