@@ -19,7 +19,7 @@ export function setThumbnail(parentElement, selector, url) {
     element.src = url
 
     element.addEventListener('error', () => {
-      element.src = 'images/thumbnail.jpg'
+      element.src = '../images/thumbnail.jpg'
     })
   }
 }
