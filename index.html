@@ -34,11 +34,11 @@
 
   <body>
     <!-- This is a template HTML for a post item -->
-    <template id="postItemTemplate">
+    <template id="postTemplate">
       <li class="col-12 col-md-6 col-lg-4">
         <div class="post-item mb-4">
           <div class="card">
-            <img data-id="thumbnail" src="images/recipe.jpg" class="card-img-top" alt="recipe" />
+            <img data-id="thumbnail" src="images/thumbnail.jpg" class="card-img-top" alt="recipe" />
 
             <div class="card-body">
               <h5 data-id="title" class="card-title">Card title</h5>
@@ -50,7 +50,7 @@
 
               <p class="card-text">
                 <small class="text-muted">by</small>
-                <small data-id="author" class="text-muted font-weight-bold"> Hau Nguyen </small>
+                <small data-id="author" class="text-muted font-weight-bold"> Nguyen </small>
                 <small data-id="timeSpan" class="text-muted"> - 3 mins ago </small>
               </p>
             </div>
@@ -133,9 +133,9 @@
 
           <div class="carousel-item">
             <img
-              src="https://picsum.photos/id/182/1378/400"
+              src="https://picsum.photos/id/1043/1378/400"
               class="d-block w-100"
-              alt="wind turbines"
+              alt="forest and moutain"
             />
             <div class="carousel-caption d-none d-md-block">
               <h5>Second slide label</h5>
@@ -176,9 +176,9 @@
         <div class="container">
           <h1 class="with-underline text-center">Latest posts</h1>
 
-          <!-- Posts list -->
-          <ul id="postsList" class="row posts-list justify-content-center">
-            <li class="col-12 col-md-6 col-lg-4">
+          <!-- Post list -->
+          <ul id="postList" class="row posts-list justify-content-center">
+            <!-- <li class="col-12 col-md-6 col-lg-4">
               <div class="post-item mb-4">
                 <div class="card">
                   <img
@@ -213,7 +213,7 @@
                   </div>
                 </div>
               </div>
-            </li>
+            </li> -->
           </ul>
 
           <!-- Posts pagination -->
@@ -250,6 +250,6 @@
     ></script>
 
     <!-- Scripts should be placed here to prevent blocking render UI -->
-    <script type="module" src="/js/main.js"></script>
+    <script type="module" src="/js/home.js"></script>
   </body>
 </html>
