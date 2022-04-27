@@ -17,5 +17,10 @@ export function setThumbnail(parentElement, selector, url) {
   const element = parentElement.querySelector(selector)
   if (element) {
     element.src = url
+
+    element.addEventListener('error', () => {
+      console.log('load image error --> use default placeholder')
+      element.src = '/images/thumbnail.jpg'
+    })
   }
 }
