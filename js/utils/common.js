@@ -20,7 +20,7 @@ export function setThumbnail(parentElement, selector, url) {
 
     element.addEventListener('error', () => {
       console.log('load image error --> use default placeholder')
-      element.src = '/images/thumbnail.jpg'
+      element.src = 'thumbnail.jpg'
     })
   }
 }
