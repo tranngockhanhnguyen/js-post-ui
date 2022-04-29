@@ -16,14 +16,21 @@ export function createPostElement(post) {
   if (!liElement) return
 
   // Update thumbnail, title, description, author
-  setTextContext(liElement, '[data-id="title"]', truncateText(post.title, 30))
-  setTextContext(liElement, '[data-id="description"]', truncateText(post.description, 200))
+  setTextContext(liElement, '[data-id="title"]', post.title)
+  setTextContext(liElement, '[data-id="description"]', truncateText(post.description, 120))
   setTextContext(liElement, '[data-id="author"]', post.author)
   // calculate spantime
   setTextContext(liElement, '[data-id="timeSpan"]', `- ${dayjs(post.updatedAt).fromNow()}`)
   setThumbnail(liElement, '[data-id="thumbnail"]', post.imageUrl)
 
   // attach events
+  // go to post deatail when click on div.post-item
+  const divElement = liElement.firstElementChild
+  if (divElement) {
+    divElement.addEventListener('click', () => {
+      window.location.assign(`/post-detail.html?id=${post.id}`)
+    })
+  }
 
   return liElement
 }

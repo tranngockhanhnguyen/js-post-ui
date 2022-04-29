@@ -1,5 +1,5 @@
 
-section.hero {
+section.post-title-image {
   height: 300px;
   background: #eee;
   background-size: cover;
@@ -23,4 +23,17 @@ section.hero {
 .post-detail .post-image {
   width: 100%;
   margin-bottom: 1rem;
+  object-fit: cover;
+}
+
+.post-detail .post-image:hover {
+  cursor: pointer;
+}
+
+.nav .nav-link {
+  color: var(--primary-color)
+}
+
+a:hover > i {
+  transform: none;
 }

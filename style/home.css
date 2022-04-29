@@ -100,3 +100,22 @@
 .posts-nav .page-item:not(.active) .page-link:hover {
   color: var(--primary-color);
 }
+
+
+.trans-animation {
+  animation-name: changePlace;
+  animation-iteration-count: 1;
+  animation-duration: 1s;
+
+}
+
+@keyframes changePlace {
+  0%  {
+    opacity: 0; 
+    transform: scale(0.8) translateY(-20px);
+  }
+  100%{
+    opacity: 1; 
+    transform: scale(1) translateY(0px);
+  }
+}

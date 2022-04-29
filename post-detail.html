@@ -48,7 +48,9 @@
             </li>
 
             <li class="nav-item">
-              <a id="goToEditPageLink" class="nav__link" href="#"></a>
+              <a id="goToEditPageLink" class="nav-link" href="#"
+                ><i class="fas fa-edit"></i> Edit post</a
+              >
             </li>
           </ul>
         </div>
@@ -56,7 +58,7 @@
     </header>
 
     <main>
-      <section id="postHeroImage" class="hero"></section>
+      <section id="postTitleImage" class="post-title-image"></section>
 
       <section class="post-detail">
         <div class="container">
@@ -86,7 +88,14 @@
                 quas ducimus aliquid. Praesentium ea aspernatur vero deserunt.
               </p>
 
-              <img class="post-image" src="https://picsum.photos/1368/800" alt="Picsum photos" />
+              <div class="ratio ratio-21x9 bg-light">
+                <img
+                  data-album="picsum"
+                  class="post-image"
+                  src="https://picsum.photos/1368/710"
+                  alt="Picsum photos"
+                />
+              </div>
 
               <p>
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci suscipit
@@ -106,12 +115,46 @@
                 quas ducimus aliquid. Praesentium ea aspernatur vero deserunt.
               </p>
 
-              <img class="post-image" src="https://picsum.photos/1368/1000" alt="Picsum photos" />
+              <div class="ratio ratio-21x9 bg-light">
+                <img
+                  data-album="picsum"
+                  class="post-image"
+                  src="https://picsum.photos/1368/720"
+                  alt="Picsum photos"
+                />
+              </div>
 
               <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci suscipit
-                inventore hic tenetur, dolor iusto dolorum rem, non error, saepe quia dignissimos
-                quas ducimus aliquid. Praesentium ea aspernatur vero deserunt.
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam porro est,
+                perferendis cupiditate nihil qui suscipit unde, illum officiis quis magnam, cumque
+                impedit asperiores nobis natus. Adipisci quo aut beatae? Laboriosam provident totam
+                nemo repellat reprehenderit alias tempora deserunt doloribus aliquam, maxime, porro
+                reiciendis sed voluptates ad atque suscipit sapiente consequuntur pariatur aperiam
+                dignissimos, amet enim. Repudiandae tempora amet cum. Neque sed quasi veniam
+                praesentium eius quia, veritatis perspiciatis accusantium magnam nobis dolorem.
+                Maiores, fugit, eveniet adipisci soluta facilis nobis quibusdam illum obcaecati
+                nihil esse unde quas quae atque voluptate? Quo dolore porro non nam quod. Cupiditate
+                ducimus, sequi facilis delectus explicabo reiciendis. Deleniti nostrum ipsam
+                necessitatibus porro deserunt molestiae ad dolore provident! Distinctio laboriosam
+                sapiente tenetur voluptate voluptatum architecto? Consequatur, rerum, fugiat minus
+                possimus corporis soluta exercitationem ducimus accusantium excepturi hic debitis
+                accusamus sapiente at explicabo atque amet tempore sed architecto? Vero vel ex
+                soluta incidunt temporibus illo porro?
+              </p>
+
+              <div class="ratio ratio-21x9 bg-light">
+                <img
+                  data-album="picsum"
+                  class="post-image"
+                  src="https://picsum.photos/1368/730"
+                  alt="Picsum photos"
+                />
+              </div>
+
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem consequatur id cumque
+                quod eum vel esse dolores sit voluptate corporis tenetur repellendus quaerat
+                distinctio pariatur, quae perferendis, rerum quam commodi.
               </p>
             </div>
           </div>
@@ -123,7 +166,44 @@
       <small>Created by Po with <i class="fas fa-heart"></i></small>
     </footer>
 
+    <!-- Modal lightbox -->
+    <div id="lightbox" class="modal fade" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+          <div class="modal-title" style="text-align: right; margin: 1rem 1rem 0 0">
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+
+          <div class="modal-body">
+            <img data-id="lightboxImg" src="/images/thumbnail.jpg" alt="lightbox" width="100%" />
+
+            <div class="text-center mt-3">
+              <button data-id="lightboxPrev" type="button" class="btn btn-secondary btn-sm">
+                Prev
+              </button>
+
+              <button data-id="lightboxNext" type="button" class="btn btn-secondary btn-sm">
+                Next
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootrap -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+
     <!-- Scripts should be placed here to prevent blocking render UI -->
-    <!-- <script type="module" src="js/post-detail.mjs"></script> -->
+    <script type="module" src="/js/post-detail.js"></script>
   </body>
 </html>
