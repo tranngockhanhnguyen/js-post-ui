@@ -30,11 +30,18 @@ export function setTitleImage(parentElement, selector, url) {
 
   const element = parentElement.querySelector(selector)
   if (element) {
-    element.style.backgroundImage = `url(${url})`
+    element.style.backgroundImage = `url("${url}")`
 
     element.addEventListener('error', () => {
       console.log('load image error --> use default placeholder')
       element.src = 'thumbnail.jpg'
     })
   }
+}
+
+export function setFieldValue(form, selector, value) {
+  if (!form) return
+
+  const field = form.querySelector(selector)
+  if (field) field.value = value
 }
