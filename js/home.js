@@ -1,5 +1,5 @@
 import postApi from './api/postApi'
-import { initPagination, initSearch, renderPostList, rederPagination } from './utils'
+import { initPagination, initSearch, renderPostList, rederPagination, toast } from './utils'
 
 async function handleFilterChange(filterName, FilterValue) {
   try {
@@ -19,6 +19,7 @@ async function handleFilterChange(filterName, FilterValue) {
     rederPagination('pagination', pagination)
   } catch (error) {
     console.log('failed to fetch post list', error)
+    toast.error(`Error: ${error}`)
   }
 }
 
@@ -49,7 +50,7 @@ async function handleFilterChange(filterName, FilterValue) {
     renderPostList(data)
     rederPagination('pagination', pagination)
   } catch (error) {
-    console.log('get all failed', error)
-    // show modal, toast error
+    console.log('get all api failed', error)
+    toast.error(`Error: ${error}`)
   }
 })()
