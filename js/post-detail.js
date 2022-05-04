@@ -1,6 +1,6 @@
 import dayjs from 'dayjs'
 import postApi from './api/postApi'
-import { setTitleImage, setTextContext, registerLightbox } from './utils'
+import { setTitleImage, setTextContext, registerLightbox, toast } from './utils'
 import localizedFormat from 'dayjs/plugin/localizedFormat'
 // to use format function
 dayjs.extend(localizedFormat)
@@ -42,5 +42,6 @@ function renderPostDetail(post) {
     renderPostDetail(post)
   } catch (error) {
     console.log('failed to fetch post detail', error)
+    toast.error(`Error: ${error}`)
   }
 })()

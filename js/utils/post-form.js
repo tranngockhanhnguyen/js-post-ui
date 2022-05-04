@@ -1,4 +1,4 @@
-import { setFieldValue, setTextContext, setTitleImage } from './common'
+import { randomNumber, setFieldValue, setTextContext, setTitleImage } from './common'
 import * as yup from 'yup'
 
 function setFormValues(form, formValues) {
@@ -39,6 +39,10 @@ function getPostSchema() {
         (value) => value.split(' ').filter((x) => Boolean(x) && x.length >= 3).length >= 2
       ),
     description: yup.string(),
+    imageUrl: yup
+      .string()
+      .required('Please random a background image!')
+      .url('Please enter a valid URL!'),
   })
 }
 
@@ -51,7 +55,7 @@ function setFieldError(form, name, error) {
 async function validatePostForm(form, formValues) {
   try {
     // reset previous error
-    ;['title', 'author'].forEach((name) => setFieldError(form, name, ''))
+    ;['title', 'author', 'imageUrl'].forEach((name) => setFieldError(form, name, ''))
 
     // start validating
     const schema = getPostSchema()
@@ -79,22 +83,64 @@ async function validatePostForm(form, formValues) {
   return isValid
 }
 
+function showLoading(form) {
+  const saveButton = form.querySelector('[name="save"]')
+  if (saveButton) {
+    saveButton.disabled = true
+    saveButton.innerHTML = `<i class="fas fa-save mr-1"></i> Saving...`
+  }
+}
+
+function hideLoading(form) {
+  const saveButton = form.querySelector('[name="save"]')
+  if (saveButton) {
+    saveButton.disabled = false
+    saveButton.innerHTML = `<i class="fas fa-save mr-1"></i> Save`
+  }
+}
+
+function initRandomImage(form) {
+  const randomButton = document.getElementById('postChangeImage')
+  if (!randomButton) return
+
+  randomButton.addEventListener('click', () => {
+    const imageUrl = `https://picsum.photos/id/${randomNumber(1000)}/1378/400`
+
+    setFieldValue(form, '[name="imageUrl"]', imageUrl) // hidden field
+    setTitleImage(document, '#postTitleImage', imageUrl)
+  })
+}
+
 export function initPostForm({ formId, defaultValues, onSubmit }) {
   const form = document.getElementById(formId)
   if (!form) return
 
   setFormValues(form, defaultValues)
 
-  form.addEventListener('submit', (e) => {
+  let submitting = false
+
+  initRandomImage(form)
+
+  form.addEventListener('submit', async (e) => {
     e.preventDefault()
+
+    // prevent other submission
+    if (submitting) return
+
+    showLoading(form)
+    submitting = true
 
     // get form values
     const formValues = getFormValues(form)
-    console.log(formValues)
+    formValues.id = defaultValues.id
 
     // validation
     // if valid trigger submit callback
     // otherwise, show validation error
-    if (!validatePostForm(form, formValues)) return
+    const isValid = await validatePostForm(form, formValues)
+    if (isValid) await onSubmit?.(formValues)
+
+    hideLoading(form)
+    submitting = false
   })
 }

@@ -1,3 +1,5 @@
+import { toast } from './toast'
+
 export function setTextContext(parentElement, selector, text) {
   if (!parentElement) return
 
@@ -19,7 +21,7 @@ export function setThumbnail(parentElement, selector, url) {
     element.src = url
 
     element.addEventListener('error', () => {
-      console.log('load image error --> use default placeholder')
+      toast.error('Error: Failed to load image! 😅')
       element.src = 'thumbnail.jpg'
     })
   }
@@ -33,7 +35,7 @@ export function setTitleImage(parentElement, selector, url) {
     element.style.backgroundImage = `url("${url}")`
 
     element.addEventListener('error', () => {
-      console.log('load image error --> use default placeholder')
+      toast.error('Error: Failed to load image! 😅')
       element.src = 'thumbnail.jpg'
     })
   }
@@ -44,4 +46,10 @@ export function setFieldValue(form, selector, value) {
 
   const field = form.querySelector(selector)
   if (field) field.value = value
+}
+
+export function randomNumber(n) {
+  if (!Number.isInteger(n) || n <= 0) return
+
+  return Math.floor(Math.random() * n)
 }
