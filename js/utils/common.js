@@ -53,3 +53,11 @@ export function randomNumber(n) {
 
   return Math.floor(Math.random() * n)
 }
+
+export function showModal(modalElement) {
+  // make sure bootstrap scripts is loaded
+  if (!window.bootstrap) return
+
+  const modal = new window.bootstrap.Modal(modalElement)
+  if (modal) modal.show()
+}

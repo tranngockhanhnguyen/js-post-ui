@@ -1,4 +1,4 @@
-export function rederPagination(elementId, pagination) {
+export function renderPagination(elementId, pagination) {
   const ulPagination = document.getElementById(elementId)
   if (!pagination || !ulPagination) return
 

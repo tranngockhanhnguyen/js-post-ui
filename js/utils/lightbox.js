@@ -1,11 +1,4 @@
-function showModal(modalElement) {
-  // make sure bootstrap scripts is loaded
-  if (!window.bootstrap) return
-
-  const modal = new window.bootstrap.Modal(modalElement)
-  if (modal) modal.show()
-}
-
+import { showModal } from './common'
 // handle click for all imgs --> Event Delegation
 // img --> find all imgs with the same album/ gallery
 // determine index of selected img

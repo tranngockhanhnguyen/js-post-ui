@@ -50,7 +50,7 @@
 
               <p class="card-text">
                 <small class="text-muted">by</small>
-                <small data-id="author" class="text-muted font-weight-bold"> Nguyen </small>
+                <small data-id="author" class="text-muted fw-bold"> Nguyen Tran </small>
                 <small data-id="timeSpan" class="text-muted"> - 3 mins ago </small>
               </p>
             </div>
@@ -243,9 +243,6 @@
                   <span aria-hidden="true">&laquo; Prev</span>
                 </a>
               </li>
-              <!-- <li class="page-item"><a class="page-link" href="#">1</a></li>
-              <li class="page-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li> -->
               <li class="page-item">
                 <a class="page-link" href="#" aria-label="Next">
                   <span aria-hidden="true">Next &raquo;</span>
@@ -255,11 +252,39 @@
           </nav>
         </div>
       </section>
-    </main>
 
-    <footer class="text-center text-muted py-3">
-      <small>Created by Po with <i class="fas fa-heart"></i></small>
-    </footer>
+      <footer class="text-center text-muted py-3">
+        <small>Created by Nguyên with <i class="fas fa-heart"></i></small>
+      </footer>
+
+      <!-- Modal Remove Post  -->
+      <div id="removeBox" class="modal fade" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Are you sure?</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <p>Do you really want to delete this post? This process cannot be undone.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                Cancel
+              </button>
+              <button name="delete" type="button" class="btn btn-danger" data-bs-dismiss="modal">
+                Delete
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
 
     <!-- Bootrap -->
     <script

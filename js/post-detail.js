@@ -42,6 +42,6 @@ function renderPostDetail(post) {
     renderPostDetail(post)
   } catch (error) {
     console.log('failed to fetch post detail', error)
-    toast.error(`Error: ${error}`)
+    toast.error(error)
   }
 })()
