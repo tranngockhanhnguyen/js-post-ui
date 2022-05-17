@@ -4,76 +4,15 @@ View live demo: https://awesomepostui.vercel.app This simple website has 3 pages
 Home page: /
 Add/Edit a post page: /add-edit-post.html
 Post detail page: /post-detail.html
-❓ Questions you may have
-What is query params and example?
 
-Query params is the parts after question mark.
-Let break the following url into smaller parts:
-URL: https://js-post-api.herokuapp.com/api/posts?_limit=10&_page=1
+## Techstacks
 
-- origin: "https://js-post-api.herokuapp.com"
-- pathname: "/api/posts"
-- search: "?_limit=10&_page=1"
-- When you parse search, you'll get query params object with two keys:
-  - `_limit`: 10
-  - `_page`: 1
-How to know whether add or edit mode when visit /add-edit-post.html page?
+- HTML/CSS
+- Javascript
+- Lib: Bootrap, Axios, Yup, Lodash, Dayjs  
+- API_URL: https://js-post-api.herokuapp.com/api
 
-Well, depend on the availability of query param postId. If it exists, then edit mode, otherwise add mode.
-How to know which post to show detail when visiting /post-detail.html?
-
-Same as above. Let check postId query param.
-How many external libs used in the final project?
-
-Boostrap: Used for building responsive layout
-Bootstrap Carousel: Used for slide show on Home page.
-Fetch: Used for working with API.
-Axios: Used for working with API.
-🎉 Post API Guide
-API_URL: https://js-post-api.herokuapp.com/api
-Get a list of posts
-GET /posts
-Supported query params:
-
-_limit: Limit the number of items per page.
-_page: Current page.
-_sort: Indicate which field should be sorted on
-_order: Indicate sort direction.
-Eg: Get page 2 posts with 10 posts/page
-
-GET /posts/:postId?_limit=10&_page=2
-Eg: Sort post to get the latest posts first.
-
-GET /posts/:postId?_sort=updatedAt&_order=desc
-To get a post detail
-GET /posts/:postId
-To add a new post
-POST /posts
-Sample payload:
-
-{
-  title: 'Some cool title',
-  author: 'Tran Nguyen',
-  description: 'Awesome post',
-  imageUrl: 'https://picsum.photos/id/580/1368/400',
-}
-To update a post
-PATCH /posts/:postId
-Please ONLY include changes to your payload:
-
-{
-  id: 'your-post-id',
-  title: 'My new title',
-}
-To remove a post
-DELETE /posts/:postId
-😍 General requirement
-Learn to use Post API: https://js-post-api.herokuapp.com
-Implement 3 pages with details described below.
-Learn to use Github.
-Deploy your page to Github Page.
-Use axios to work with API.
-(Optional) Use anime.js to add animation.
+## Description
 🏠 Home page
 Render list of posts
 Research Bootstrap Carousel and add to home page.
