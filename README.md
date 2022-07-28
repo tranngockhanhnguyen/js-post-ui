@@ -9,7 +9,7 @@ Post detail page: /post-detail.html
 
 - HTML/CSS
 - Javascript
-- Lib: Bootrap, Axios, Yup, Lodash, Dayjs  
+- Lib: Bootrap, Axios, Yup, Lodash, Dayjs, Vite  
 - API_URL: https://js-post-api.herokuapp.com/api
 
 ## Description
